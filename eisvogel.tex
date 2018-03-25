@@ -59,6 +59,7 @@ $if(fontfamily)$
 $else$
 \usepackage{lmodern}
 $endif$
+\usepackage[useregional=numeric]{datetime2}
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
@@ -649,9 +650,9 @@ $endif$
 \fancyfoot{}
 \lhead{$title$}
 \chead{}
-\rhead{$date$}
-\lfoot{$for(author)$$author$$sep$, $endfor$}
-\cfoot{}
+\rhead{$document_type$}
+\lfoot{$last_revised_date$}
+\cfoot{$document_classification_level$}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -690,13 +691,25 @@ $if(subtitle)$
 \vskip 1em
 {\Large \textsf{$subtitle$}}
 $endif$
-\vskip 2em
+\vskip 1em
 \noindent
 {\Large \textsf{$for(author)$$author$$sep$, $endfor$}
-\vfill
 }
 
-\textsf{$date$}}
+$if(document_internal_reference)$
+\vskip 2em
+{\Large \textsf{$document_internal_reference$}}
+$endif$
+$if(document_type)$
+\\
+{\textsf{$document_type$}}
+$endif$
+\vfill
+
+%%\textsf{ID: \textsf{$document_internal_reference$}}\\
+\textsf{Created on: $date$}\\
+\textsf{Last revised on: $last_revised_date$}}
+
 \end{flushleft}
 \end{titlepage}
 \restoregeometry
