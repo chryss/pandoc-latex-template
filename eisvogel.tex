@@ -454,11 +454,12 @@ $endif$
 %\definecolor{listing-javadoc-comment}{HTML}{006CA9}
 
 %
-% for the background color of the title page
+% for the background color of the title page and logo
 %
 $if(titlepage)$
 \usepackage{pagecolor}
 \usepackage{afterpage}
+\usepackage{graphicx}
 $endif$
 
 %
@@ -674,10 +675,11 @@ $if(titlepage-color)$
 $endif$
 \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
 \begin{flushleft}
+\includegraphics[width = 40mm]{$document_logo_path$}
 \noindent
 \\[-1em]
 \color[HTML]{$if(titlepage-text-color)$$titlepage-text-color$$else$5F5F5F$endif$}
-\makebox[0pt][l]{\colorRule[$if(titlepage-rule-color)$$titlepage-rule-color$$else$435488$endif$]{1.3\textwidth}{$if(titlepage-rule-height)$$titlepage-rule-height$$else$4$endif$pt}}
+%%\makebox[0pt][l]{\colorRule[$if(titlepage-rule-color)$$titlepage-rule-color$$else$435488$endif$]{1.3\textwidth}{$if(titlepage-rule-height)$$titlepage-rule-height$$else$4$endif$pt}}
 \par
 \noindent
 
