@@ -683,6 +683,18 @@ $endif$
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+$if(background)$
+\usepackage{eso-pic}
+\newcommand\BackgroundImage{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{$background$}%
+\vfill
+}}}
+$endif$
+
 %%
 %% end added
 %%
@@ -692,6 +704,10 @@ $endif$
 %%
 %% begin titlepage
 %%
+
+$if(background)$
+\AddToShipoutPicture*{\BackgroundImage}
+$endif$
 
 $if(titlepage)$
 \begin{titlepage}
