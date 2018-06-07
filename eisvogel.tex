@@ -735,7 +735,10 @@ $endif$
 
 %%\textsf{ID: \textsf{$document_internal_reference$}}\\
 \textsf{Created on: $date$}\\
-\textsf{Last revised on: $last_revised_date$}}
+$if(last_revised_date)$
+\textsf{Last revised on: $last_revised_date$}
+$endif$
+}
 
 \end{flushleft}
 \end{titlepage}
