@@ -701,7 +701,9 @@ $if(titlepage-color)$
 $endif$
 \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
 \begin{flushleft}
+$if(document_logo_path)$
 \includegraphics[width = 40mm]{$document_logo_path$}
+$endif$
 \noindent
 \\[-1em]
 \color[HTML]{$if(titlepage-text-color)$$titlepage-text-color$$else$5F5F5F$endif$}
