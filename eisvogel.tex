@@ -738,9 +738,16 @@ $if(subtitle)$
 $endif$
 \vskip 1em
 \noindent
-{\Large \textsf{$version$}
+{\Large \textsf{Version: $version$}}
+
+\vskip 1em
+{\Large \textsf{Created on: $date$}}\\
+$if(last_revised_date)$
+{\Large \textsf{Last revised on: $last_revised_date$}}
+$endif$
 }
 
+\vfill
 $if(document_internal_reference)$
 \vskip 2em
 {\Large \textsf{$document_internal_reference$}}
@@ -749,14 +756,8 @@ $if(document_type)$
 \\
 {\textsf{$document_type$}}
 $endif$
-\vfill
 
-%%\textsf{ID: \textsf{$document_internal_reference$}}\\
-\textsf{Created on: $date$}\\
-$if(last_revised_date)$
-\textsf{Last revised on: $last_revised_date$}
-$endif$
-}
+
 
 \end{flushleft}
 \end{titlepage}
